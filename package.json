@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "build": "web-ext build -v",
+    "start": "web-ext run --source-dir ./extension-dist"
+  },
+  "devDependencies": {
+    "web-ext": "^8.9.0"
+  }
+}
