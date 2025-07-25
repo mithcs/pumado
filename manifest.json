@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "pumado",
+  "version": "1.0",
+  "description": "Download Study Material from Parul University's e-Learning Portal",
+  "homepage_url": "https://github.com/mithcs/pumado",
+
+  "action": {
+    "default_title": "pumado",
+    "default_popup": "popup/toggle_pumado.html"
+  },
+
+  "permissions": [
+    "downloads", "webRequest", "webRequestBlocking", "storage"
+  ],
+
+  "host_permissions": [
+    "<all_urls>"
+  ],
+
+  "background": {
+    "scripts": ["background.js"]
+  }
+}
