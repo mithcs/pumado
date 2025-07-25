@@ -1,4 +1,9 @@
-# 1.1
+# 0.2
 
-[ ] Design Icon
-[ ] Handle errors gracefully
+- [ ] Support Manifest v2 too
+- [ ] Design Icon
+- [ ] Handle errors gracefully
+
+# 0.3
+
+- [ ] ...
