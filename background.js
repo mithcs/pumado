@@ -1,15 +1,25 @@
 const browser = window.browser || window.chrome;
 
+function onDownloadStarted(id) {
+  console.log(`Started Download: ${id}`)
+}
+
+function onDownloadFailed(error) {
+  console.log(`Download Failed: ${error}`)
+}
+
 function downloadFile(details) {
   const initiator = details.initiator || details.originUrl || "";
   if (!initiator.startsWith("https://elearning.paruluniversity.ac.in")) {
     return;
   }
 
-  browser.downloads.download({
+  let downloading = browser.downloads.download({
     url: details.url,
     conflictAction: "uniquify"
   });
+
+  downloading.then(onDownloadStarted, onDownloadFailed);
 
   return { cancel: true };
 }
