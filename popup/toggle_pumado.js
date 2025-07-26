@@ -17,11 +17,7 @@ async function updateUI() {
 
 async function toggleExtension() {
   let result = await browser.storage.local.get('isOn');
-  let isOn = result.isOn;
-
-  if (typeof isOn === "undefined") {
-    isOn = false;
-  }
+  let isOn = result.isOn ?? false;
 
   let newIsOn = !isOn;
 
