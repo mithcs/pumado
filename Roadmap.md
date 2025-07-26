@@ -6,3 +6,7 @@
 # 0.3
 
 - [ ] Design Icon
+
+# 0.4
+
+- [ ] Support Chrome
