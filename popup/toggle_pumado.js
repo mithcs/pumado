@@ -1,10 +1,8 @@
-const browserApi = browser || chrome;
-
 let toggleLabel = document.querySelector(".toggle__label");
 let toggleCheckbox = document.getElementById("mode-toggle");
 
 async function updateUI() {
-  let result = await browserApi.storage.local.get('isOn');
+  let result = await browser.storage.local.get('isOn');
   let isOn = result.isOn;
 
   if (typeof isOn === "undefined") {
@@ -16,12 +14,12 @@ async function updateUI() {
 }
 
 async function toggleExtension() {
-  let result = await browserApi.storage.local.get('isOn');
+  let result = await browser.storage.local.get('isOn');
   let isOn = result.isOn ?? false;
 
   let newIsOn = !isOn;
 
-  await browserApi.storage.local.set({ isOn: newIsOn });
+  await browser.storage.local.set({ isOn: newIsOn });
 
   toggleLabel.style.backgroundColor = newIsOn ? "#28a745" : "#dc3545";
   toggleCheckbox.checked = newIsOn;

@@ -1,5 +1,3 @@
-const browserApi = browser || chrome;
-
 function onDownloadStarted(id) {
   console.log(`Started Download: ${id}`)
 }
@@ -14,7 +12,7 @@ function downloadFile(details) {
     return;
   }
 
-  let downloading = browserApi.downloads.download({
+  let downloading = browser.downloads.download({
     url: details.url,
     conflictAction: "uniquify"
   });
@@ -25,11 +23,11 @@ function downloadFile(details) {
 }
 
 async function setupRequestListener() {
-  let result = await browserApi.storage.local.get('isOn');
+  let result = await browser.storage.local.get('isOn');
   let isOn = result.isOn ?? true;
 
   if (isOn) {
-    browserApi.webRequest.onBeforeRequest.addListener(
+    browser.webRequest.onBeforeRequest.addListener(
       downloadFile,
       { urls: ["*://*/*.pdf"] },
       ["blocking"]
