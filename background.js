@@ -16,7 +16,7 @@ function downloadFile(details) {
 
 async function setupRequestListener() {
   let result = await browser.storage.local.get('isOn');
-  let isOn = result.isOn;
+  let isOn = result.isOn ?? true;
 
   if (isOn) {
     browser.webRequest.onBeforeRequest.addListener(
