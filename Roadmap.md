@@ -1,9 +1,8 @@
 # 0.2
 
-- [ ] Support Manifest v2 too
-- [ ] Design Icon
-- [ ] Handle errors gracefully
+- [X] Support Manifest v2 too
+- [ ] Handle download errors gracefully
 
 # 0.3
 
-- [ ] ...
+- [ ] Design Icon
